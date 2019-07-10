@@ -85,6 +85,7 @@ yes' in the block header.
 	     (setq org-babel-default-header-args:sh
 		   (list `(:prologue . ,sh-src-prologue)))
 
+       (org-link-set-parameters "tel" :export (lambda (path desc format) (message (concat "calling" desc)))) 
 	     (org-babel-do-load-languages
 	      'org-babel-load-languages (cli-get-org-babel-load-languages))
 

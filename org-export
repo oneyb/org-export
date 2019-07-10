@@ -2,6 +2,10 @@
 
 scriptdir=$(dirname $0)
 
+# in case the 'script is actually a soft-link
+scriptdir2="$(dirname "$(readlink -f "$0")")"
+[ $scriptdir != $scriptdir2 ] && scriptdir=$scriptdir2
+
 if [[ -z $1 || $1 == "-h" ]]; then
     echo "Usage: org-export command options..."
     echo
@@ -15,6 +19,7 @@ fi
 
 command=$1
 scriptname=$scriptdir/org-export-${command}.el
+echo $scriptname
 
 if [[ ! -f $scriptname ]]; then
     echo "Error: $command is not a valid command"
