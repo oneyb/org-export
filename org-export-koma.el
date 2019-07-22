@@ -95,7 +95,8 @@ yes' in the block header.
 	     ;; http://stackoverflow.com/questions/24188100
 	     (setq org-babel-default-header-args:sh
 		   (list `(:prologue . ,sh-src-prologue)))
-       (org-link-set-parameters "tel" :export (lambda (path desc format) (message (concat "calling" desc)))) 
+       ;; (org-link-set-parameters "tel" :export (lambda (path desc format) (concat "tel:" desc))) 
+       (org-link-set-parameters "tel")
 
        (add-to-list 'org-latex-classes
                     '("a4-labels"

@@ -110,7 +110,8 @@ yes' in the block header.
 (org-mode)
 (message (format "org-mode version %s" org-version))
 
-(org-link-set-parameters "tel" :export (lambda (path desc format) (message (concat "calling" desc)))) 
+;; (org-link-set-parameters "tel" :export (lambda (path desc format) (concat "tel:" desc))) 
+(org-link-set-parameters "tel")
 (org-odt-export-to-odt)
 ;(write-file outfile)
 
