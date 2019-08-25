@@ -37,36 +37,44 @@ First, clone this repository and enter the cloned directory. There are
 a few options for installing and invoking the =org-export= entry point
 to a location on your =$PATH= (we'll use =/usr/local/bin= as an example):
 
-Recommended: use a hard link. This method allows you to update
+- Recommended: use a link. This method allows you to update
 =org-export= with a git-pull from the git repository:
 
 #+BEGIN_SRC sh
 ln org-export *.el /usr/local/bin
+# or:
+ln -s org-export /usr/local/bin
 #+END_SRC
 
-Copy the files:
+- Copy the files:
 
 #+BEGIN_SRC sh
 cp org-export *.el /usr/local/bin
 #+END_SRC
 
-Invoke using the absolute path to =org-export= within the cloned git repository.
+- Invoke using the absolute path to =org-export= within the cloned git repository.
 
 Execute the script with =-h= to see usage and available commands:
 
 #+NAME: cli-help
 #+BEGIN_SRC sh :results output :exports both :eval yes
-./org-export -h
+org-export -h
 #+END_SRC
 
-#+RESULTS:
-: Usage: org-export command options...
-:
-: Available commands include:
-:   cli
-:   html
-:   pelican
-:   tangle
+#+RESULTS: cli-help
+#+begin_example
+Usage: org-export command options...
+
+Available commands include:
+  cli
+  html
+  koma
+  odt
+  pdf
+  pelican
+  tangle
+#+end_example
+
 
 If all of the scripts are on your $PATH, you should be able to execute using:
 
